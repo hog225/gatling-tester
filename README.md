@@ -4,7 +4,6 @@
 1. [test 설정](https://gatling.io/docs/gatling/reference/current/cheat-sheet/#injection-profile-open-injection-steps)
 
 ## 실행 방법
-
 src.main.scala 는 동작 안함 ... 
 
 ### Record
@@ -30,7 +29,7 @@ src.main.scala 는 동작 안함 ...
 
 ### Run
 mvn gatling:test
-
+mvn gatling:test -D gatling.simulationClass=org.yg.TrainerCreate
 
 ### 결과 확인 
 terminal 에 결과 표시 
@@ -38,7 +37,15 @@ terminal 에 결과 표시
 1. 해석 방법 
 
 
-## Test 결과 
+## Test 결과
+> response time 50th percentile                        286 (OK=286    KO=-     )
+>>50 Percent의 Response Time 이 286ms 보다 작다 즉 빠르다.
+
+
+
 ### proxy-trainer
 1. 1차 webflux
 ![img.png](img/img99.png)
+
+## 주의 
+Gatling 3.x 대는 Scala 2.13 을 이용한다. 

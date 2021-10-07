@@ -6,7 +6,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 
-class RecordedSimulation extends Simulation {
+class TrainerRead extends Simulation {
 
 	val httpProtocol = http
 		.baseUrl("http://192.168.0.134:8081")
@@ -24,7 +24,7 @@ class RecordedSimulation extends Simulation {
 
 
 	val scn = scenario("poxyTrainerTest")
-		.repeat(3){exec(http("request_0")
+		.repeat(100){exec(http("request_0")
 			.get("/proxy-health/trainer-list")
 			.headers(headers_0))}
 
@@ -36,5 +36,5 @@ class RecordedSimulation extends Simulation {
 //			.get("/proxy-health/trainer/54"))
 
 	// 동시에 1000 명이 수행
-	setUp(scn.inject(atOnceUsers(3))).protocols(httpProtocol)
+	setUp(scn.inject(atOnceUsers(100))).protocols(httpProtocol)
 }

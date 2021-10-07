@@ -1,5 +1,6 @@
 import io.gatling.app.Gatling
 import io.gatling.core.config.GatlingPropertiesBuilder
+import IDEPathHelper
 
 object Engine extends App {
 
