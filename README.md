@@ -42,6 +42,15 @@ terminal 에 결과 표시
 >>50 Percent의 Response Time 이 286ms 보다 작다 즉 빠르다.
 
 
+- 1차 (500 동시 100번 반복)
+  - webflux
+    - 328.947
+  - mvc
+    - 273.224
+- 2차 (500 동시 100번 반복)
+  - webflux
+    - 1315 DUMMY, webflux 로그 없앰 
+
 
 ### proxy-trainer
 1. 1차 webflux

@@ -6,7 +6,7 @@ import io.gatling.core.Predef._
 import io.gatling.http.Predef._
 import io.gatling.jdbc.Predef._
 
-class TrainerRead extends Simulation {
+class TrainerWebfluxRead extends Simulation {
 
 	val httpProtocol = http
 		.baseUrl("http://192.168.0.134:8081")
@@ -36,5 +36,5 @@ class TrainerRead extends Simulation {
 //			.get("/proxy-health/trainer/54"))
 
 	// 동시에 1000 명이 수행
-	setUp(scn.inject(atOnceUsers(100))).protocols(httpProtocol)
+	setUp(scn.inject(atOnceUsers(500))).protocols(httpProtocol)
 }
