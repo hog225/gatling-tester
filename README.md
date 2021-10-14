@@ -51,6 +51,20 @@ terminal 에 결과 표시
   - webflux
     - 1315 DUMMY, webflux 로그 없앰 
 
+### myslq vs redis 
+- Intel(R) Core(TM) i7-7700 CPU @ 3.60GHz   3.60 GHz 4코어/ 16gb
+- Redis, MySql: CPU 2 / Memory 2048 / Docker
+- Dummy: Memory 2048
+- 20 초 100명
+
+#### 쓰기 
+- my sql
+![img.png](img/MYSQL.png)
+
+- redis 
+![img_1.png](img/img_1.png)
+
+
 
 ### proxy-trainer
 1. 1차 webflux

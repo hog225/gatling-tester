@@ -1,16 +1,12 @@
 package org.yg
 
-import scala.concurrent.duration._
-
 import io.gatling.core.Predef._
 import io.gatling.http.Predef._
-import io.gatling.jdbc.Predef._
-import org.json4s.native.Json
 import org.json4s.DefaultFormats
+import org.json4s.native.Json
 
 
-
-class TrainerCreate extends Simulation {
+class TrainerCreateRedis extends Simulation {
 
 	val httpProtocol = http
 		.baseUrl("http://192.168.0.134:8080")
@@ -42,7 +38,7 @@ class TrainerCreate extends Simulation {
 
 	val scn = scenario("proxyTrainerCreate")
 		.during(20){exec(http("request_0")
-			.post("/health/trainer")
+			.post("/health/trainer-redis")
 			.headers(headers_0)
 			.body(StringBody(strBody))
 			.check(status.is(200))
